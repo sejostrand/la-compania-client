@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Logos = () => {
+const Logos = ({ logos }) => {
+  console.log(logos);
   return (
-    <div class='snap-item w-full h-screen bg-black flex justify-center items-center'></div>
+    <div class='snap-view bg-black flex justify-center items-center'></div>
   );
 };
 

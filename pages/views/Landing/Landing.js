@@ -6,7 +6,7 @@ import HeroCover from './components/HeroCover';
 
 const Landing = () => {
   return (
-    <div className='snap-item w-full h-screen flex flex-col items-center bg-gray-100'>
+    <div className='snap-view flex flex-col items-center bg-gray-100'>
       <div className='mt-10'>
         <Image src={'/media/header.png'} alt='logo' height={80} width={300} />
       </div>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { fetchAPI } from './api/api';
 import Head from 'next/head';
 import Image from 'next/image';
+// import getData from '../lib/api';
 
 import Landing from './views/Landing/Landing';
 import About1 from './views/About/About1';
@@ -12,8 +14,10 @@ import Logos from './views/Logos/Logos';
 import Packaging from './views/Packaging/Packaging';
 import Productions from './views/Productions/Productions';
 import Contact from './views/Contact/Contact';
+import LoadingScreen from './views/LoadingScreen/LoadingScreen';
+import SideBar from './components/SideBar';
 
-export default function Home() {
+export default function Home({ marcas, logos, packaging, productions }) {
   useEffect(() => {
     const mousePos = document.getElementById('about2');
     const canvas = document.getElementById('space');
@@ -23,7 +27,7 @@ export default function Home() {
       'mousemove',
       (e) => {
         let xAxis = (innerW / 2 - e.pageX) / 100;
-        let yAxis = (innerH / 2 - e.pageY) / 100;
+        let yAxis = (innerH / 2 - e.pageY) / 50;
         canvas.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
       },
       []
@@ -38,17 +42,41 @@ export default function Home() {
         <link rel='icon' href='/media/ami.png' />
       </Head>
       <NavBar />
-      <div className='snap-container flex flex-col relative'>
-        <Landing />
-        <About1 />
+
+      <div id='main-container' className='snap-container'>
+        <Landing id='landing' />
+        <About1 id='about1' />
         <About2 />
-        <About3 />
-        <Marcas />
-        <Logos />
-        <Packaging />
-        <Productions />
-        <Contact />
+        <About3 id='about3' />
+        <Marcas id='marcas' marcas={marcas} />
+        <Logos id='logos' logos={logos} />
+        <Packaging id='packaging' packaging={packaging} />
+        <Productions id='productions' productions={productions} />
+        <Contact id='contact' />
       </div>
     </>
   );
+}
+
+export async function getStaticProps(context) {
+  const res1 = await fetch('https://la-compania-strapi.herokuapp.com/brands');
+  const marcas = await res1.json();
+  console.log(marcas);
+
+  const res2 = await fetch('https://la-compania-strapi.herokuapp.com/logos');
+  const logos = await res2.json();
+
+  const res3 = await fetch(
+    'https://la-compania-strapi.herokuapp.com/packagings'
+  );
+  const packaging = await res3.json();
+
+  const res4 = await fetch(
+    'https://la-compania-strapi.herokuapp.com/productions'
+  );
+  const productions = await res4.json();
+
+  return {
+    props: { marcas, logos, packaging, productions },
+  };
 }

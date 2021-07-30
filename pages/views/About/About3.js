@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const About3 = () => {
   return (
-    <div className='snap-item justify-center items-center'>
+    <div className='snap-view justify-center items-center'>
       <div className='absolute w-full h-screen z-0'>
         <Image src='/media/bg-about3.png' layout='fill' />
       </div>
