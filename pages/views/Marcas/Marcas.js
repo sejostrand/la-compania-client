@@ -67,7 +67,9 @@ const Marcas = ({ marcas }) => {
         <div className='flex bg-red px-1'>Marca creada desde zero</div>
         <div className='flex justify-center items-center text-white'>
           {marcas[index].tags.map((tag) => {
-            return <a className='mx-4'>{tag.Tag}</a>;
+            <a key={tag.id} className='mx-4'>
+              {tag.Tag}
+            </a>;
           })}
         </div>
       </div>
