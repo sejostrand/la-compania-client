@@ -29,7 +29,7 @@ const Packaging = ({ packaging }) => {
     >
       <SlideControls indexNext={indexNext} indexBack={indexBack} />
       <div className='absolute w-full h-screen z-0'>
-        <Image src={packaging[index].background.url} layout='fill' />
+        <Image src={packaging[index].background.url} layout='fill' alt='x' />
       </div>
     </div>
   );

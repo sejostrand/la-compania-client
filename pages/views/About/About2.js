@@ -12,13 +12,13 @@ const About2 = () => {
       className='snap-view bg-black flex flex-row justify-center items-center'
     >
       <div id='space' className='absolute w-full h-screen z-0 perspective'>
-        <Image src='/media/bg-about2.jpg' layout='fill' />
+        <Image src='/media/bg-about2.jpg' layout='fill' alt='x' />
       </div>
       <div className='flex flex-col'>
         <div className='flex flex-row flex-wrap items-center mr-24'>
           <Mario />
           <div className='flex'>
-            <Image src='/media/ami.png' width='300' height='300' />
+            <Image src='/media/ami.png' width='300' height='300' alt='x' />
           </div>
           <Tere />
         </div>

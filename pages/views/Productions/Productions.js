@@ -24,11 +24,13 @@ const Productions = ({ productions }) => {
   return (
     <div
       id='productions'
-      className='snap-view bg-black flex justify-center items-center'
+      className='snap-view bg-black flex justify-center items-center z-0'
     >
       <SlideControls indexNext={indexNext} indexBack={indexBack} />
-      <div className='absolute w-full h-screen z-0'>
-        <video src={productions[index].background.url} />
+      <div className='absolute w-full h-screen z-10'>
+        <video autoplay muted loop style={{ width: '500px', height: '500px' }}>
+          <source src={productions[index].background.url} type='video/mp4' />
+        </video>
       </div>
     </div>
   );

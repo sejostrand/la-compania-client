@@ -8,12 +8,17 @@ const Logos = ({ logos }) => {
       id='logos'
       class='snap-view bg-black flex justify-center items-center z-0'
     >
-      <Image src='/media/bg-logos.jpg' layout='fill' className='absolute' />
+      <Image
+        src='/media/bg-logos.jpg'
+        layout='fill'
+        className='absolute'
+        alt='x'
+      />
       <div className='grid grid-rows-4 md:grid-rows-2 ml-4 mr-56 grid-flow-col gap-4'>
         {logos.map((logo) => {
           return (
             <div className=''>
-              <Image src={logo.logo.url} width={150} height={150} />
+              <Image src={logo.logo.url} width={150} height={150} alt='x' />
             </div>
           );
         })}
