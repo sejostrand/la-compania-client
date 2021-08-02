@@ -28,9 +28,9 @@ const Productions = ({ productions }) => {
     >
       <SlideControls indexNext={indexNext} indexBack={indexBack} />
       <div className='absolute w-full h-screen z-10'>
-        <video muted loop style={{ width: '500px', height: '500px' }}>
+        {/* <video muted loop style={{ width: '500px', height: '500px' }}>
           <source src={productions[index].background.url} type='video/mp4' />
-        </video>
+        </video> */}
       </div>
     </div>
   );
