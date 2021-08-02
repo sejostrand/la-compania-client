@@ -59,20 +59,24 @@ export default function Home({ marcas, logos, packaging, productions }) {
 }
 
 export async function getStaticProps(context) {
-  const res1 = await fetch('https://la-compania-strapi.herokuapp.com/brands');
+  const res1 = await fetch(
+    'https://la-compania-strapi.herokuapp.com/brands?_sort=order:ASC'
+  );
   const marcas = await res1.json();
   console.log(marcas);
 
-  const res2 = await fetch('https://la-compania-strapi.herokuapp.com/logos');
+  const res2 = await fetch(
+    'https://la-compania-strapi.herokuapp.com/logos?_sort=order:ASC'
+  );
   const logos = await res2.json();
 
   const res3 = await fetch(
-    'https://la-compania-strapi.herokuapp.com/packagings'
+    'https://la-compania-strapi.herokuapp.com/packagings?_sort=order:ASC'
   );
   const packaging = await res3.json();
 
   const res4 = await fetch(
-    'https://la-compania-strapi.herokuapp.com/productions'
+    'https://la-compania-strapi.herokuapp.com/productions?_sort=order:ASC'
   );
   const productions = await res4.json();
 

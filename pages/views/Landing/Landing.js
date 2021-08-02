@@ -12,7 +12,11 @@ const Landing = () => {
       </div>
       <HeroCover />
       <div className='absolute bottom-6 right-24 text-5xl cursor-pointer animate-bounce'>
-        <FaHandPointDown />
+        <FaHandPointDown
+          onClick={() => {
+            document.getElementById('about1').scrollIntoView();
+          }}
+        />
       </div>
     </div>
   );

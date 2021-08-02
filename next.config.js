@@ -1,3 +1,5 @@
 module.exports = {
-  reactStrictMode: true,
+  images: {
+    domains: ['la-compania-upload.nyc3.digitaloceanspaces.com'],
+  },
 };

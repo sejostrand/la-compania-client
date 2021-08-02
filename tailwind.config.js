@@ -13,10 +13,15 @@ module.exports = {
       indigo: colors.indigo,
       red: '#FC5162',
       yellow: colors.amber,
+      blue: colors.blue,
+      green: colors.green,
     },
     extend: {
       fontFamily: {
-        bowl: ['BowlbyOneSC'],
+        lemonmilk: ['Lemonmilk-Regular'],
+        lemonmilkBold: ['Lemonmilk-Bold'],
+        primary: ['"Bambino"'],
+        secondary: ['"Lemonmilk"'],
       },
     },
   },

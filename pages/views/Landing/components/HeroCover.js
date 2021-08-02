@@ -28,8 +28,8 @@ const HeroCover = () => {
 
   return (
     <div className='flex flex-row justify-center items-center my-auto'>
-      <Image src={images[imageIndex]} alt='figura' height={300} width={300} />
-      <div className='font-bowl flex items-center absolute text-lg lg:text-3xl transform -translate-y10'>
+      <Image src={images[imageIndex]} alt='figura' height={500} width={500} />
+      <div className='font-lemonmilkBold flex items-center absolute text-lg lg:text-3xl transform -translate-y10'>
         La{' '}
         <span className='mx-2 text-2xl sm:ml-4 sm:text-3xl lg:mx-6 lg:text-5xl'>
           imaginación

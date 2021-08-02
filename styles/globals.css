@@ -4,10 +4,19 @@
 
 @layer base {
   @font-face {
-    font-family: 'BowlbyOneSC';
-    font-weight: 400;
-    src: url('../public/fonts/BowlbyOneSC.woff') format('woff'),
-      url('../public/fonts/BowlbyOneSC.woff2') format('woff2');
+    font-family: 'Lemonmilk-Bold';
+    src: url('./fonts/LEMONMILK-Bold.woff') format('woff'),
+      url('./fonts/LEMONMILK-Bold.woff') format('woff2');
+  }
+  @font-face {
+    font-family: 'Lemonmilk-Regular';
+    src: url('./fonts/LEMONMILK-Regular.woff') format('woff'),
+      url('./fonts/LEMONMILK-Regular.woff') format('woff2');
+  }
+  @font-face {
+    font-family: 'Bambino';
+    src: url('./fonts/Bambino.woff') format('woff'),
+      url('./fonts/Bambino.woff2') format('woff2');
   }
   body {
     margin: 0;
@@ -84,14 +93,5 @@
     --tw-blur: blur(2px);
     transition: filter 2s ease-in-out;
     animation: pulse2 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  .nav-link {
-    cursor: pointer;
-    font-weight: normal;
-  }
-  .nav-link-selected {
-    cursor: pointer;
-    font-weight: bold;
   }
 }

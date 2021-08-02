@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { FiArrowLeftCircle, FiArrowRightCircle } from 'react-icons/fi';
+import SlideControls from '../../components/SlideControls';
 
 const Marcas = ({ marcas }) => {
   const [index, setIndex] = useState(0);
@@ -22,28 +22,38 @@ const Marcas = ({ marcas }) => {
     }
   };
 
+  console.log(marcas);
+
   return (
-    <div className='snap-view flex flex-row justify-center items-center'>
-      <div className='absolute flex flex-row flex-nowrap bottom-32 text-white text-5xl z-10'>
-        <button className='rounded-full filter bg-gray-900 bg-opacity-80 mr-6'>
-          <FiArrowLeftCircle onClick={() => indexBack()} />
-        </button>
-        <button className='rounded-full filter bg-gray-900 bg-opacity-80 ml-6'>
-          <FiArrowRightCircle onClick={() => indexNext()} />
-        </button>
-      </div>
+    <div
+      id='marcas'
+      className='snap-view flex flex-col justify-center items-center'
+    >
+      <SlideControls indexNext={indexNext} indexBack={indexBack} />
 
       <div className='absolute w-full h-screen z-0'>
-        <img src={marcas[index].background.url} className='w-full h-screen' />
+        <Image src={marcas[index].background.url} layout='fill' />
+      </div>
+      <div className='flex flex-col flex-nowrap absolute left-48'>
+        <div className='m-10'>
+          <Image src={marcas[index].insta1.url} height='300' width='300' />
+        </div>
+        <div className='m-10'>
+          <Image src={marcas[index].insta2.url} height='300' width='300' />
+        </div>
       </div>
 
-      <div className='flex flex-row flex-wrap'>
-        <div className='flex flex-col flex-nowrap'>
-          <Image src='/media/ami.png' height='200' width='200' />
-          <Image src='/media/ami.png' height='200' width='200' />
+      <div className='flex flex-col flex-wrap relative items-center'>
+        <div className='flex items-center'>
+          <Image src={marcas[index].logo.url} height='300' width='300' />
         </div>
-        <div className=''>
-          <img src='' />
+      </div>
+      <div className='flex flex-col items-center text-white z-20 text-2xl font-lemonmilkBold absolute bottom-8'>
+        <div className='flex bg-red px-1'>Marca creada desde zero</div>
+        <div className='flex justify-center items-center text-white'>
+          {marcas[index].tags.map((tag) => {
+            return <a className='mx-4'>{tag.Tag}</a>;
+          })}
         </div>
       </div>
     </div>
